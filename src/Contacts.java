@@ -1,6 +1,5 @@
 import utils.Input;
 import utils.Utilities;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -8,8 +7,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Contacts{
     static public Input input = new Input();
@@ -91,15 +88,8 @@ public class Contacts{
         String number = input.getString("Enter the number of the contact to remove: ");
         try {
             List<String> lines = Files.readAllLines(contactsFile);
-            List<String> newList = new ArrayList<>();
-            for(String line : lines){
-                if (!line.contains(number)){
-                    newList.add(line);
-                }
-            }
-            if (!newList.isEmpty()){
-                Files.write(contactsFile, newList);
-            }
+            lines.remove(Integer.parseInt(number) - 1);
+            Files.write(contactsFile, lines);
         } catch (IOException e) {
             e.printStackTrace();
         }
