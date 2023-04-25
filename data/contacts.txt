@@ -1,8 +1,3 @@
-Name | Phone number
----------------
-Jane Austen | (123) 456 - 7890
-
-Shia LeBouf | 2 (222) 222 - 2222
-
-Mary-Ellen Watson | 333 - 3333
-
+santa clause | (999) 999 - 9999
+bugs bunny | (333) 333 - 3333
+betty boop | 8 (888) 888 - 8888
