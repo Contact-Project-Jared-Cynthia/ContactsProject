@@ -80,10 +80,14 @@ public class Contacts{
     }
 
     public static void removeContact(){
-        String contact = input.getString("Enter the name or number of the contact you want to remove");
+        String contact = input.getString("Enter the name or number of the contact you want to remove: ");
         try {
             List<String> lines = Files.readAllLines(contactsFile);
-            lines.stream().filter(line -> line.toLowerCase().contains(contact.toLowerCase())).forEach(lines::remove);
+            for (String line : lines) {
+                if (line.toLowerCase().contains(contact.toLowerCase())){
+                    lines.remove(line);
+                }
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
